@@ -7,6 +7,8 @@ fun main() {
     }
     println(listOfNumbers)
 
+    val listOfNames = getListOfNames()
+    println(getCollectionWithNamesStartsWithLetterA(listOfNames))
 
 }
 
@@ -16,4 +18,19 @@ fun getListOfElements(): List<Int> {
         list.add(item)
     }
     return list
+}
+
+
+fun getListOfNames(): List<String> {
+    val list: MutableList<String> = mutableListOf()
+    list.add("John")
+    list.add("Don")
+    list.add("Argon")
+    list.add("Madonna")
+    return list
+}
+
+fun getCollectionWithNamesStartsWithLetterA(list: List<String>): List<String> {
+    val filteredList = list.filter { name -> name.startsWith("A") }
+    return filteredList
 }
